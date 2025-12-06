@@ -1,0 +1,10 @@
+{
+    "id":22165,
+    "name":"isra abdikariim mohamed",
+    "city":"hargaysa",
+    "orders":[
+        {"id":1,"product":"banana","quantity":10},
+        {"id":3 ,"product":"apple","quantity":4}
+    ]
+
+}
