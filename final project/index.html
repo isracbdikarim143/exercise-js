@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomaliMovies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">🎬 SomaliMovies</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="watchlist.html">My Watchlist</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Raadi Aflaanta Caalamiga ah</h1>
+            <div class="search-box">
+                
+                <input type="text" id="searchInput" placeholder="Gali magaca filimka...">
+                
+                <button onclick="searchMovies()">🔍 Raadi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOVIE GRID -->
+    <div class="container">
+        <h2 id="resultsTitle">🔥 Aflaanta Caanka Ah</h2>
+        
+        <div id="movieGrid" class="grid-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

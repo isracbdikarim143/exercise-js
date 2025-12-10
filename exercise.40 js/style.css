@@ -1,0 +1,58 @@
+/* style.css - Waa sidii hore oo dhan */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; 
+    font-family: sans-serif;
+}
+
+.player-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 350px; 
+    text-align: center;
+}
+
+.video-container {
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    background-color: #000;
+}
+
+#video-element {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Macluumaadka, Badhamada, Wakhtiga iyo Codka... */
+.song-info h2 { margin: 5px 0 0; font-size: 1.2em; color: #333; }
+.song-info p { margin: 0 0 15px; font-size: 0.9em; color: #666; }
+.controls button { background: none; border: none; font-size: 2em; cursor: pointer; margin: 0 10px; color: #5cb3ff; transition: color 0.2s ease, transform 0.1s ease; }
+.controls button:hover { color: #007bff; transform: scale(1.1); }
+.controls button:active { transform: scale(0.95); }
+.time-controls, .volume-control { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+
+#progress-bar, #volume-slider {
+    flex-grow: 1; margin: 0 10px; height: 5px; -webkit-appearance: none; appearance: none; background: #e0e0e0; border-radius: 5px; cursor: pointer;
+}
+#progress-bar::-webkit-slider-thumb, #volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 15px; height: 15px; border-radius: 50%; background: #5cb3ff;
+}
+
+/* Koodhka Liiska Qarsoon (Context Menu) */
+.context-menu {
+    position: absolute; background-color: #282828; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); padding: 8px 0; z-index: 1000; min-width: 200px; display: none; 
+}
+.menu-item {
+    color: #ffffff; padding: 10px 15px; cursor: pointer; font-size: 0.95em; transition: background-color 0.2s;
+}
+.menu-item:hover {
+    background-color: #3e3e3e; 
+}

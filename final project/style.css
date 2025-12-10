@@ -1,0 +1,190 @@
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #e50914; /* Netflix Red */
+    --dark: #141414;    /* Black Background */
+    --gray: #1f1f1f;    /* Card Background */
+    --text: #ffffff;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+}
+
+a { text-decoration: none; color: white; }
+
+/* --- NAVBAR --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--primary); }
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION (NETFLIX STYLE) --- */
+.hero {
+    height: 400px;
+    /* Kani waa sawirka Netflix ee rasmiga ah */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 12px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #b20710; }
+
+/* --- GRID SYSTEM --- */
+.container {
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h2 { border-left: 5px solid var(--primary); padding-left: 10px; margin-bottom: 20px; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--gray);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover { transform: scale(1.05); }
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card-info { padding: 10px; }
+.card h3 { font-size: 0.9rem; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rating { color: gold; font-size: 0.8rem; }
+
+/* --- DETAILS PAGE STYLES --- */
+.details-content {
+    display: flex;
+    gap: 30px;
+    background: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.details-content img { max-width: 300px; border-radius: 10px; width: 100%; }
+.details-text { flex: 1; min-width: 300px; }
+.btn-trailer { background: #ff0000; padding: 10px 20px; border-radius: 4px; display: inline-block; margin-right: 10px; }
+.btn-add { background: #28a745; padding: 10px 20px; border-radius: 4px; border:none; color:white; cursor:pointer; }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .menu-icon { display: block; }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    }
+    nav ul.show { display: flex; }
+    
+    .hero { height: 300px; }
+    .hero-content h1 { font-size: 1.5rem; }
+    input { width: 100%; margin-bottom: 10px; }
+    button { width: 100%; }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+    .card img { height: 200px; }
+}
